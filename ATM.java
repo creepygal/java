@@ -4,6 +4,7 @@ public class ATM {
     public static void main(String[] args){
         try{
         Scanner input=new Scanner(System.in); 
+        String[] u=new String [10];
         System.out.println("Please select from the options below:\n");
         System.out.println("1: Login");
         System.out.println("2: Signup");
@@ -18,12 +19,14 @@ public class ATM {
                 login(Username,Password);
                 break;
             case 2:
+                Username=null;
+                Password=null; 
                 System.out.println("Welcome to the Platform!");
-                signup();
+                signup(Username,Password);
                 break;
             case 3:
                 System.out.println("Please check from the following:");
-                users();
+                users(u);
                 break;
             case 4:
                 System.out.println("Good Bye! ");
@@ -66,16 +69,25 @@ public class ATM {
             System.out.println("Exception caught: \n"+e);
         }
     }
-    public static void signup(String[] s){
-        System.out.print("Available fruits are: [");
-        for(String x : fruits)
-            System.out.print(x + " ");
-        System.out.println("]");
-        System.out.println();
+    public static void signup(String Username, String Password){
+        try{
+            Scanner input= new Scanner(System.in);
+            System.out.println("Enter your Name:");
+            String name= input.nextLine();
+            System.out.println("Enter your UserName:");
+            Username= input.nextLine();
+            System.out.println("Choose a strong Password:");
+            Password= input.nextLine();
+            System.out.println("\t Your Account has been successfully created!");
+            System.out.println("Welcome"+ name +"!");
+           }
+        catch(Exception e){
+            System.out.println("Exception caught: \n"+e);
+        }
     }
-    public static void users(String[] s){
-        System.out.print("Available fruits are: [");
-        for(String x : fruits)
+    public static void users(String[] users){
+        System.out.print("Available users are: [");
+        for(String x : users)
             System.out.print(x + " ");
         System.out.println("]");
         System.out.println();
