@@ -5,15 +5,15 @@ public class FibMethods {
         System.out.print("Enter the integer: ");
         int n= input.nextInt();
         int n1=0;int n2=1;
-        System.out.println("Fibonacci Series of "+n+" is: "+ fibsequence(n1,n2));
+        System.out.println("Fibonacci Series of "+n+" is: "+ fibsequence(n1,n2,n));
     }
-    public static int fibsequence(int n1,int n2){
+    public static int fibsequence(int n1,int n2,int n){
             for(int i=1;i<=n;++i){
             System.out.print(n1+" ");
             int sumofprevtwo=n1+n2;
             n1=n2;
             n2=sumofprevtwo;
-            return n;
-    }
+            }
+          return n;
 }
 }

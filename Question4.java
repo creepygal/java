@@ -1,13 +1,15 @@
 import java.util.Scanner;
-public class NumericTable {
+public class Question4 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter an integer value: ");
         int a=input.nextInt();
-        table(a);
+        while(a%2==0)
+            table(a);
+        a=input.nextInt();
     }
     public static int table(int n){
-        for (int i=1;i<=10;i++){
+        for (int i=1;i<=20;i++){
             System.out.println(i+" * "+n+" = "+(i*n));
         }
         return n;
